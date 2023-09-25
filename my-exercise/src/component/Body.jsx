@@ -25,7 +25,7 @@ function TentangKami() {
 
     <section>
         <h2>Kontak</h2>
-        <p>Silakan hubungi kami di IG: <a href="">@smqresports</a> atau WA : 082219308866.</p>
+        <p>Silakan hubungi kami di IG: <a href="https://www.instagram.com/smqresports/?next=%2F">@smqresports</a> atau WA : 082219308866.</p>
     </section>
     </main>
   );
