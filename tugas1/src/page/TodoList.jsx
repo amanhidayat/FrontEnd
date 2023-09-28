@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import {
   Box,
   Input,
@@ -10,9 +9,7 @@ import {
   Checkbox,
   IconButton,
   Flex,
-
-  form } from '@chakra-ui/react';
-
+} from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 
 function TodoList() {
@@ -37,6 +34,8 @@ function TodoList() {
     updatedTasks[index].completed = !updatedTasks[index].completed;
     setTasks(updatedTasks);
   };
+
+  const completedTasksCount = tasks.filter((task) => task.completed).length;
 
   return (
     <Box p={4}>
@@ -70,6 +69,11 @@ function TodoList() {
           </ListItem>
         ))}
       </List>
+      <Box mt={4}>
+        <strong>
+          Total Tasks: {tasks.length} | Completed Tasks: {completedTasksCount}
+        </strong>
+      </Box>
     </Box>
   );
 }
