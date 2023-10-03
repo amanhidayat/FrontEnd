@@ -1,0 +1,26 @@
+{
+    "carts": [
+      {
+        "id": 0,
+        "name": "Manusia Silver",
+        "price": "Rp. 80.000",
+        "img": "https://asset.kompas.com/crops/chLTymmSMwxxbxfn1NftYDa0Puo=/0x0:0x0/750x500/data/photo/2020/11/17/5fb2b13390cac.jpg"
+        
+      },
+      {
+        "id": 1,
+        "name": "Musang Minus Kandang",
+        "price": "Rp. 200.000",
+        "img": "https://2.bp.blogspot.com/-hlSswCeZtWc/WJyUCG0DvUI/AAAAAAAAB0w/XyGl_IsmksEOEo6AjgRCmctZd2eCjFEGgCLcB/s1600/ciri%2Bmusang%2Bjantan%2Bbirahi.jpg"
+        
+      },
+      {
+        "id": 2,
+        "name": "Perangkap Tikus",
+        "price": "Rp. 10.000",
+        "img": "https://cf.shopee.com.my/file/d6ee5ac7a17ea7d68535b98d58a223fe"
+        
+      }
+    ]
+  }
+    
