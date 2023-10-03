@@ -24,16 +24,16 @@ import {
     const data = useSelector((state) => state.cart.value);
     console.log(data);
     return (
-      <Flex w="200vw" h="200px" bgColor="black" alignItems="center">
+      <Flex w="100vw" h="100px" bgColor="black" alignItems="center">
         <Box p="30">
           <Image src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" />
         </Box>
-        <Popover isLazy>
+        <Popover borderTopRadius="100%">
           <PopoverTrigger>
             <Button>
               <Text fontSize="xxl" fontWeight="bold">
-                Cart
-                <Badge ml="1" fontSize="0.8em" colorScheme="green">
+                  Keranjang
+                <Badge ml="1" fontSize="0.8em" colorScheme="red">
                   {data.length}
                 </Badge>
               </Text>
@@ -45,9 +45,9 @@ import {
             <PopoverBody>
               <Table>
                 <Tr>
-                  <Th>name</Th>
-                  <Th>price</Th>
-                  <Th>image</Th>
+                  <Th>Name</Th>
+                  <Th>Price</Th>
+                  <Th>Image</Th>
                 </Tr>
                 {data.map((item) => {
                   return (
