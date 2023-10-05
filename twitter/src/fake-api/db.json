@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "securepassword"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "anotherpassword"
+    }
+  ],
+  "tweets": [
+    {
+      "text": "woi\n",
+      "id": 3
+    },
+    {
+      "text": "TESTING ",
+      "id": 4
+    },
+    {
+      "text": "P balap ",
+      "id": 5
+    },
+    {
+      "text": "A",
+      "id": 6
+    },
+    {
+      "text": "andre",
+      "id": 7
+    },
+    {
+      "text": "Diatas Normal , Sesuatu yang baru ku sadari100ribu",
+      "id": 9
+    },
+    {
+      "text": "abcdefghijklmnopqrstuvwxyz",
+      "id": 10
+    },
+    {
+      "text": "halo",
+      "id": 11
+    },
+    {
+      "text": "alo",
+      "id": 12
+    },
+    {
+      "text": "o",
+      "id": 13
+    },
+    {
+      "text": "halo",
+      "id": 14
+    },
+    {
+      "text": "haha",
+      "id": 15
+    },
+    {
+      "text": "halo",
+      "id": 16
+    },
+    {
+      "text": "Halo Apa Itu",
+      "id": 17
+    },
+    {
+      "text": "hadi",
+      "id": 18
+    },
+    {
+      "text": "j",
+      "id": 19
+    }
+  ]
+}
