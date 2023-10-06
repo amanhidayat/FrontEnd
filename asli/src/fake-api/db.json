@@ -1,12 +1,34 @@
 {
-    "users": [
-      {
-          "name": "Aman",
-          "gmail": "aman@gmail.com",
-          "password": "12345Aa",
-          "id": 1
-      }
-
-    
-]
+  "users": [
+    {
+      "name": "Aman",
+      "email": "aman@gmail.com",
+      "password": "12345Aa",
+      "id": 1
+    }
+  ],
+  "chattwit": [
+    {
+      "name": "Aman",
+      "email": "aman@gmail.com",
+      "tweet": "Saya membuka ini Pertama",
+      "id": 1
+    },
+    {
+      "text": "k",
+      "id": 2
+    },
+    {
+      "text": "halo",
+      "id": 3
+    },
+    {
+      "text": "saya mau makan martabak ygy",
+      "id": 4
+    },
+    {
+      "text": "pak nova",
+      "id": 5
+    }
+  ]
 }

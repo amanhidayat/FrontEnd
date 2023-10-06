@@ -15,6 +15,10 @@ import {
 import { useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch } from "react-redux";
+import { setData } from '../redux/userSlice';
+import { useRef } from 'react';
 
 const schema = yup.object().shape({
   email: yup.string().email('Email tidak valid').required('Email wajib diisi'),
@@ -22,6 +26,7 @@ const schema = yup.object().shape({
 });
 
 export default function SimpleCard() {
+  const dispatch = useDispatch();
     const navigate = useNavigate();
   const [formValues, setFormValues] = React.useState({
     email: '',
@@ -38,25 +43,34 @@ export default function SimpleCard() {
     });
   };
 
+  const refEmail = useRef();
+  const refPass = useRef();
+
   const handleLogin = async () => {
     try {
-      await schema.validate(formValues, { abortEarly: false });
-        
-      if (formValues.email === 'contoh@gmail.com' && formValues.password === 'password') {
-        
-        navigate('/chattwit');
+      const data = {email: refEmail.current.value, password: refPass.current.value}
+      const response = await axios.get(
+        `http://localhost:2000/users?email=${data.email}&password=${data.password}`
+      );
+
+      console.log(response);
+      console.log(refEmail.current.value);
+      console.log(refPass.current.value);
+
+  
+      if (response.data[0]?.id) {
+        dispatch(setData(response.data[0]));
+        localStorage.setItem("id", response.data[0].id);
+        navigate("/chattwit");
+
       } else {
-        
-        setError('Email atau password salah. Silakan coba lagi.');
+        alert("Akun Tidak ditemukan");
       }
-    } catch (validationErrors) {
-      const validationErrorMap = {};
-      validationErrors.inner.forEach((error) => {
-        validationErrorMap[error.path] = error.message;
-      });
-      setErrors(validationErrorMap);
+    } catch (err) {
+      console.log(err);
     }
   };
+
 
   return (
     <Flex
@@ -66,7 +80,7 @@ export default function SimpleCard() {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'}>BU4T 4K03N MO3</Heading>
+          <Heading fontSize={'4xl'}>LOGIN WOY...!!!</Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
             Please log in to continue.
           </Text>
@@ -82,6 +96,7 @@ export default function SimpleCard() {
               <Input
                 type="email"
                 name="email"
+                ref={refEmail}
                 value={formValues.email}
                 onChange={handleChange}
                 isInvalid={errors.email}
@@ -93,6 +108,7 @@ export default function SimpleCard() {
               <Input
                 type="password"
                 name="password"
+                ref={refPass}
                 value={formValues.password}
                 onChange={handleChange}
                 isInvalid={errors.password}
