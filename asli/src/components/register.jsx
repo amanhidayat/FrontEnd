@@ -1,89 +1,123 @@
-import React from 'react';
 import {
-  Flex,
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  HStack,
-  InputRightElement,
-  Stack,
   Button,
-  Heading,
-  Text,
-  useColorModeValue,
-  Link,
-} from '@chakra-ui/react'
-import { useState } from 'react'
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  FormControl,
+  Input,
+  Stack,
+} from "@chakra-ui/react";
+import { Formik, Form, ErrorMessage, Field } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 
-export default function SignupCard() {
-  const [showPassword, setShowPassword] = useState(false)
+const RegisterSchema = Yup.object().shape({
+  username: Yup.string().required("Username is required"),
+  email: Yup.string()
+    .required("Email is required")
+    .email("Invalid email format"),
+  password: Yup.string()
+    .min(4, "Minimum 4 character")
+    .required("Password is required"),
+});
+
+export const Register = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleSubmit = async (data) => {
+    try {
+      await axios.post("http://localhost:2000/users", data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-    <Flex
-      minH={'100vh'}
-      align={'center'}
-      justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'}>
-            B1K1N D1 S1N13 CO3K..!!
-          </Heading>
-        </Stack>
-        <Box
-          rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
-          boxShadow={'lg'}
-          p={8}>
-          <Stack spacing={4}>
-            <HStack>
-              <Box>
-                <FormControl id="UserName" isRequired>
-                  <FormLabel>User Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-            </HStack>
-            <FormControl id="Gmail" isRequired>
-              <FormLabel>Gmail</FormLabel>
-              <Input type="Gmail" />
-            </FormControl>
-            <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
-              <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} />
-                <InputRightElement h={'full'}>
-                  <Button
-                    variant={'ghost'}
-                    onClick={() => setShowPassword((showPassword) => !showPassword)}>
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
-            <Stack spacing={10} pt={2}>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={'blue.400'}
-                color={'white'}
-                _hover={{
-                  bg: 'blue.500',
-                }}>
-                Sign up
-              </Button>
-            </Stack>
-            <Stack pt={6}>
-              <Text align={'center'}>
-                Already a user? <Link color={'blue.400'}>Login</Link>
-              </Text>
-            </Stack>
-          </Stack>
-        </Box>
-      </Stack>
-    </Flex>
-  )
-}
+    <>
+      <Button onClick={onOpen}>Buat Akun</Button>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <Formik
+          initialValues={{
+            username: "",
+            email: "",
+            password: "",
+          }}
+          validationSchema={RegisterSchema}
+          onSubmit={(values, action) => {
+            // console.log(values);
+            handleSubmit(values);
+            action.resetForm();
+          }}
+        >
+          {() => {
+            return (
+              <Form>
+                <ModalContent>
+                  <ModalHeader>Buat Akun</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <Stack spacing="4">
+                      <FormControl>
+                        <label>Username</label>
+                        <Input
+                          as={Field}
+                          name="username"
+                          type="text"
+                          autoComplete="off"
+                        />
+                        <ErrorMessage
+                          name="username"
+                          component="div"
+                          style={{ color: "red" }}
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <label>Email</label>
+                        <Input
+                          as={Field}
+                          name="email"
+                          type="email"
+                          autoComplete="off"
+                        />
+                        <ErrorMessage
+                          name="email"
+                          component="div"
+                          style={{ color: "red" }}
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <label>Password</label>
+                        <Input
+                          as={Field}
+                          name="password"
+                          type="password"
+                          autoComplete="off"
+                        />
+                        <ErrorMessage
+                          name="password"
+                          component="div"
+                          style={{ color: "red" }}
+                        />
+                      </FormControl>
+                    </Stack>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button colorScheme="blue" type="submit">
+                      Daftar
+                    </Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Form>
+            );
+          }}
+        </Formik>
+      </Modal>
+    </>
+  );
+};
