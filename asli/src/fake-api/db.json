@@ -4,25 +4,20 @@
       "name": "Aman",
       "email": "aman@gmail.com",
       "password": "12345Aa",
-      "id": 1
+      "id": 1,
+      "referralCode": "ADE123"
     },
     {
-      "username": "ditho",
-      "email": "ditho@gmail.com",
+      "username": "agna",
+      "email": "agna@gmail.com",
       "password": "12345678",
       "id": 2
     },
     {
-      "username": "agna11",
-      "email": "agna@gmail.com",
+      "username": "ashiap",
+      "email": "ashiap@gmail.com",
       "password": "12345678",
       "id": 3
-    },
-    {
-      "username": "asep",
-      "email": "asep@gmail.com",
-      "password": "Abc123",
-      "id": 4
     }
   ],
   "chattwit": [
@@ -30,43 +25,16 @@
       "name": "Aman",
       "email": "aman@gmail.com",
       "tweet": "Saya membuka ini Pertama",
-      "id": 1
+      "id": 1,
+      "referralCode": "ADE123"
     },
     {
-      "text": "k",
+      "text": "ahli",
       "id": 2
     },
     {
-      "text": "halo",
+      "text": "Ashiap\n",
       "id": 3
-    },
-    {
-      "text": "saya mau makan martabak ygy",
-      "id": 4
-    },
-    {
-      "text": "pak nova",
-      "id": 5
-    },
-    {
-      "text": "paman syam",
-      "id": 6
-    },
-    {
-      "text": "ditho",
-      "id": 7
-    },
-    {
-      "text": "jajsajkdh",
-      "id": 8
-    },
-    {
-      "text": "test",
-      "id": 9
-    },
-    {
-      "text": "tolong saya",
-      "id": 10
     }
   ]
 }

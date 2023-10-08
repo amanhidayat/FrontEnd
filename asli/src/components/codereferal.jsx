@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function ReferralSystem() {
   const [username, setUsername] = useState(''); // State untuk menyimpan nama pengguna
   const [referralCode, setReferralCode] = useState('');

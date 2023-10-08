@@ -24,11 +24,11 @@ const RegisterSchema = Yup.object().shape({
   password: Yup.string()
     .min(4, "Minimum 4 character")
     .required("Password is required"),
+    referralCode: Yup.string(),
 });
 
 export const Register = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const handleSubmit = async (data) => {
     try {
       await axios.post("http://localhost:2000/users", data);
