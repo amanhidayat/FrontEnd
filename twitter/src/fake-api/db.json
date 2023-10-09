@@ -1,82 +1,78 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "email": "john@example.com",
-      "password": "securepassword"
+      "username": "user 1",
+      "email": "user1@gmail.com",
+      "password": "Asd123",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Jane Smith",
-      "email": "jane@example.com",
-      "password": "anotherpassword"
+      "username": "user 2",
+      "email": "user2@gmail.com",
+      "password": "Asd123",
+      "id": 2
+    },
+    {
+      "username": "user 3",
+      "email": "user3@gmail.com",
+      "password": "Asd123",
+      "id": 3
+    },
+    {
+      "username": "Muh Aman Hidayat",
+      "email": "aman@gmail.com",
+      "password": "Asd123",
+      "id": 4
+    },
+    {
+      "username": "yayat",
+      "email": "yayat@gmail.com",
+      "password": "12345678",
+      "id": 5
     }
   ],
   "tweets": [
     {
-      "text": "woi\n",
+      "username": "user 3",
+      "email": "user3@gmail.com",
+      "tweet": "Selamat pagi !",
+      "id": 1
+    },
+    {
+      "username": "user 1",
+      "email": "user1@gmail.com",
+      "tweet": "Selamat pagi juga !",
+      "id": 2
+    },
+    {
+      "username": "user 1",
+      "email": "user1@gmail.com",
+      "tweet": "Semangat mas aman",
       "id": 3
     },
     {
-      "text": "TESTING ",
+      "username": "user 2",
+      "email": "user2@gmail.com",
+      "tweet": "Semangat mas lutfi !",
       "id": 4
     },
     {
-      "text": "P balap ",
+      "username": "user 2",
+      "email": "user2@gmail.com",
+      "tweet": "Jum'at berkah",
       "id": 5
     },
     {
-      "text": "A",
+      "username": "Muh Aman Hidayat",
+      "email": "aman@gmail.com",
+      "tweet": "First Tweet !",
       "id": 6
     },
     {
-      "text": "andre",
+      "username": "Muh Aman Hidayat",
+      "email": "aman@gmail.com",
+      "tweet": "Gabut",
       "id": 7
-    },
-    {
-      "text": "Diatas Normal , Sesuatu yang baru ku sadari100ribu",
-      "id": 9
-    },
-    {
-      "text": "abcdefghijklmnopqrstuvwxyz",
-      "id": 10
-    },
-    {
-      "text": "halo",
-      "id": 11
-    },
-    {
-      "text": "alo",
-      "id": 12
-    },
-    {
-      "text": "o",
-      "id": 13
-    },
-    {
-      "text": "halo",
-      "id": 14
-    },
-    {
-      "text": "haha",
-      "id": 15
-    },
-    {
-      "text": "halo",
-      "id": 16
-    },
-    {
-      "text": "Halo Apa Itu",
-      "id": 17
-    },
-    {
-      "text": "hadi",
-      "id": 18
-    },
-    {
-      "text": "j",
-      "id": 19
     }
   ]
 }
